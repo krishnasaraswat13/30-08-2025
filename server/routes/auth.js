@@ -15,6 +15,11 @@ router.post('/register', async (req, res) => {
   try {
     const { name, phone, aadhaar, email, password, role } = req.body;
 
+    // Basic validation
+    if (!name || !phone || !password) {
+      return res.status(400).json({ message: 'Name, phone, and password are required.' });
+    }
+
     // Check if user already exists
     const existingUser = await User.findOne({
       $or: [
@@ -30,6 +35,7 @@ router.post('/register', async (req, res) => {
       });
     }
 
+    // Create and save user
     const user = new User({
       name,
       phone,
@@ -55,7 +61,8 @@ router.post('/register', async (req, res) => {
       }
     });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    console.error('Register error:', error);
+    res.status(500).json({ message: 'Server error. Please try again.' });
   }
 });
 
