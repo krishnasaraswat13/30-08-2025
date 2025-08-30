@@ -5,6 +5,15 @@ import {
   MessageSquare, Pill, BarChart, Heart, Phone, Clock
 } from 'lucide-react';
 
+// Add this at the top of your Dashboard.tsx file
+declare global {
+  interface Window {
+    OmnidimensionWebWidget?: {
+      open: () => void;
+      // add other methods if needed
+    };
+  }
+}
 type Consultation = {
   status: string;
   scheduledDate: string;
@@ -157,10 +166,19 @@ const Dashboard = () => {
                   <Video className="h-6 w-6 text-blue-600" />
                   <span className="font-medium">Book Consultation</span>
                 </button>
-                <button className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-green-50 hover:border-green-300 transition-all">
-                  <MessageSquare className="h-6 w-6 text-green-600" />
-                  <span className="font-medium">AI Health Check</span>
-                </button>
+                <button
+  className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-green-50 hover:border-green-300 transition-all"
+  onClick={() => {
+    if (window.OmnidimensionWebWidget && typeof window.OmnidimensionWebWidget.open === 'function') {
+      window.OmnidimensionWebWidget.open();
+    } else {
+      alert('Chatbot is not available.');
+    }
+  }}
+>
+  <MessageSquare className="h-6 w-6 text-green-600" />
+  <span className="font-medium">AI Health Check</span>
+</button>
                 <button className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-purple-50 hover:border-purple-300 transition-all">
                   <Pill className="h-6 w-6 text-purple-600" />
                   <span className="font-medium">Find Medicine</span>
