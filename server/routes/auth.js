@@ -62,6 +62,14 @@ router.post('/register', async (req, res) => {
     });
   } catch (error) {
     console.error('Register error:', error);
+
+    // More descriptive error handling
+    if (error.name === 'ValidationError') {
+      return res.status(400).json({ message: error.message });
+    }
+    if (error.code === 11000) {
+      return res.status(400).json({ message: 'Duplicate field value entered.' });
+    }
     res.status(500).json({ message: 'Server error. Please try again.' });
   }
 });
@@ -102,6 +110,7 @@ router.post('/login', async (req, res) => {
       }
     });
   } catch (error) {
+    console.error('Login error:', error);
     res.status(400).json({ message: error.message });
   }
 });
