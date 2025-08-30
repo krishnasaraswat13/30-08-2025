@@ -20,8 +20,8 @@ const Navbar = () => {
     { path: '/features', label: 'Features' },
     { path: '/workflow', label: 'Workflow' },
     { path: '/impact', label: 'Impact' },
-    { path: '/team', label: 'Team' },
-    { path: '/references', label: 'References' },
+    // { path: '/team', label: 'Team' },
+    // { path: '/references', label: 'References' },
     { path: '/contact', label: 'Contact' }
   ];
 

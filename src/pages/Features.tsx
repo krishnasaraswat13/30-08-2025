@@ -1,8 +1,18 @@
 import React from 'react';
 import { Video, Globe, Database, Activity, Bot, Mic, Scale, Shield } from 'lucide-react';
 
+type FeatureColor = 'blue' | 'green' | 'purple' | 'red' | 'indigo' | 'orange' | 'teal' | 'pink';
+
+interface Feature {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  benefits: string[];
+  color: FeatureColor;
+}
+
 const Features = () => {
-  const features = [
+  const features: Feature[] = [
     {
       icon: <Video className="h-12 w-12 text-blue-600" />,
       title: 'Video Consultation with Doctors',
@@ -61,7 +71,7 @@ const Features = () => {
     }
   ];
 
-  const colorClasses = {
+  const colorClasses: Record<FeatureColor, string> = {
     blue: 'from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700',
     green: 'from-green-500 to-green-600 hover:from-green-600 hover:to-green-700',
     purple: 'from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700',
@@ -127,7 +137,7 @@ const Features = () => {
       </section>
 
       {/* Technology Stack */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -157,7 +167,7 @@ const Features = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600 text-white">
@@ -170,7 +180,7 @@ const Features = () => {
             benefiting from NIRAMYA's innovative telemedicine platform.
           </p>
           <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors transform hover:scale-105">
-            Get Started Today
+            <a href="http://localhost:5173/">Get Started Today</a>
           </button>
         </div>
       </section>

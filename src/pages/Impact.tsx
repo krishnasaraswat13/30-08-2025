@@ -2,7 +2,18 @@ import React from 'react';
 import { Heart, TrendingUp, Users, Building, Globe, DollarSign } from 'lucide-react';
 
 const Impact = () => {
-  const impacts = [
+  type ImpactColor = 'red' | 'green' | 'blue' | 'purple' | 'teal' | 'orange';
+
+  type ImpactType = {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+    benefits: string[];
+    stats: string;
+    color: ImpactColor;
+  };
+
+  const impacts: ImpactType[] = [
     {
       icon: <Heart className="h-12 w-12 text-red-500" />,
       title: 'Healthcare Impact',
@@ -83,7 +94,7 @@ const Impact = () => {
     }
   ];
 
-  const colorClasses = {
+  const colorClasses: Record<ImpactColor, string> = {
     red: 'from-red-500 to-red-600 hover:from-red-600 hover:to-red-700',
     green: 'from-green-500 to-green-600 hover:from-green-600 hover:to-green-700',
     blue: 'from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700',

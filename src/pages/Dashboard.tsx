@@ -5,11 +5,24 @@ import {
   MessageSquare, Pill, BarChart, Heart, Phone, Clock
 } from 'lucide-react';
 
+type Consultation = {
+  status: string;
+  scheduledDate: string;
+  doctorId?: { name?: string };
+  type?: string;
+  // Add other fields as needed
+};
+
+type Doctor = {
+  name: string;
+  // Add other fields as needed
+};
+
 const Dashboard = () => {
   const { user } = useAuth();
   const [activeTab, setActiveTab] = useState('overview');
-  const [consultations, setConsultations] = useState([]);
-  const [doctors, setDoctors] = useState([]);
+  const [consultations, setConsultations] = useState<Consultation[]>([]);
+  const [doctors, setDoctors] = useState<Doctor[]>([]);
 
   useEffect(() => {
     // Fetch user data and consultations

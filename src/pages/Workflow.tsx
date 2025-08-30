@@ -1,8 +1,27 @@
 import React from 'react';
 import { UserPlus, Bot, Video, Database, Activity, CheckCircle } from 'lucide-react';
 
+const colorClasses = {
+  blue: 'from-blue-500 to-blue-600',
+  green: 'from-green-500 to-green-600',
+  purple: 'from-purple-500 to-purple-600',
+  red: 'from-red-500 to-red-600',
+  orange: 'from-orange-500 to-orange-600',
+  teal: 'from-teal-500 to-teal-600'
+};
+
+type StepColor = keyof typeof colorClasses;
+
+type Step = {
+  icon: React.ReactElement;
+  title: string;
+  description: string;
+  details: string[];
+  color: StepColor;
+};
+
 const Workflow = () => {
-  const steps = [
+  const steps: Step[] = [
     {
       icon: <UserPlus className="h-12 w-12 text-blue-600" />,
       title: 'Register with Aadhaar/Phone',
@@ -166,9 +185,9 @@ const Workflow = () => {
             Join the NIRAMYA platform today and experience healthcare like never before. 
             It's simple, secure, and designed for you.
           </p>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors transform hover:scale-105">
+          {/* <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors transform hover:scale-105">
             Begin Registration
-          </button>
+          </button> */}
         </div>
       </section>
     </div>

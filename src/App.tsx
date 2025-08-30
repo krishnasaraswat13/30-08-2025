@@ -6,8 +6,8 @@ import Home from './pages/Home';
 import Features from './pages/Features';
 import Workflow from './pages/Workflow';
 import Impact from './pages/Impact';
-import Team from './pages/Team';
-import References from './pages/References';
+// import Team from './pages/Team';
+// import References from './pages/References';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -26,8 +26,8 @@ function App() {
               <Route path="/features" element={<Features />} />
               <Route path="/workflow" element={<Workflow />} />
               <Route path="/impact" element={<Impact />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="/references" element={<References />} />
+              {/* <Route path="/team" element={<Team />} /> */}
+              {/* <Route path="/references" element={<References />} /> */}
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />

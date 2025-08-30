@@ -218,7 +218,7 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Project Info Card */}
+            {/* Project Info Card
             <div className="bg-gradient-to-r from-blue-600 to-green-600 p-6 rounded-xl text-white">
               <h3 className="text-xl font-bold mb-4">Smart India Hackathon 2025</h3>
               <div className="space-y-2">
@@ -228,8 +228,9 @@ const Contact = () => {
                 <p><span className="font-semibold">Project:</span> NIRAMYA Telemedicine Platform</p>
               </div>
             </div>
+            */}
           </div>
-        </div>
+        </div> 
 
         {/* FAQ Section */}
         <div className="mt-16">

@@ -42,9 +42,9 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
               <div className="mb-6">
-                <span className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-4">
+                {/* <span className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-4">
                   Smart India Hackathon 2025 • Problem ID: 25018
-                </span>
+                </span> */}
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                   NIRAMYA
                   <span className="block text-2xl md:text-3xl font-normal text-blue-200 mt-2">
